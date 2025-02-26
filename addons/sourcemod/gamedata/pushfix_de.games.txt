@@ -110,4 +110,115 @@
 			}
 		}
 	}
+
+	"cstrike"
+	{
+		"Offsets"
+		{
+			"m_nBits"
+			{
+				"windows"	"12" // done
+				"linux"		"12" // done
+			}
+			
+			"m_Flags"
+			{
+				"windows"	"56" // done
+				"linux"		"56" // done
+			}
+		}
+		
+		"Signatures"
+		{
+			"ServerClassInit<DT_BasePlayer>"
+			{
+				"library"	"server"
+				"windows"	"\xA1\x2A\x2A\x2A\x2A\xA8\x01\x0F\x85\x2A\x2A\x2A\x2A\x6A\x00\x6A\x00\x6A\xFF\x6A\x04\x6A\x00\x83\xC8\x01\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\xA3\x2A\x2A\x2A\x2A\xE8\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\xFF\x35\x2A\x2A\x2A\x2A\x6A\x00\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\xE8\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\x68\x50\x0B\x00\x00" // done
+				"linux"		"@_Z15ServerClassInitIN13DT_BasePlayer7ignoredEEiPT_" // done
+			}
+			
+			"ServerClassInit<DT_LocalPlayerExclusive>"
+			{
+				"library"	"server"
+				"windows"	"\xA1\x2A\x2A\x2A\x2A\xA8\x01\x0F\x85\x2A\x2A\x2A\x2A\x6A\x00\x6A\x00\x6A\xFF\x6A\x04\x6A\x00\x83\xC8\x01\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\xA3\x2A\x2A\x2A\x2A\xE8\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\x68\x68\x08\x00\x00" // done
+				"linux"		"@_Z15ServerClassInitIN23DT_LocalPlayerExclusive7ignoredEEiPT_" // done
+			}
+			
+			"SendProxy_CropFlagsToPlayerFlagBitsLength"
+			{
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x8B\x45\x10\x8B\x08\x8B\x45\x14\x81\xE1\xFF\x07\x00\x00" // done
+				"linux"		"@_Z41SendProxy_CropFlagsToPlayerFlagBitsLengthPK8SendPropPKvS3_P8DVariantii" // done
+			}
+			
+			"SendTable_Init"
+			{
+				"library"	"engine"
+				"windows"	"\xA3\x2A\x2A\x2A\x2A\xEB\x2A\x5F" // done
+				"linux"		"@_Z14SendTable_InitPP9SendTablei" // done
+			}
+		}
+		
+		"Addresses"
+		{
+			"PLAYER_FLAG_BITS"
+			{
+				"windows"
+				{
+					"signature"		"SendProxy_CropFlagsToPlayerFlagBitsLength"
+					"offset"		"13" // done
+				}
+				
+				"linux"
+				{
+					"signature"		"SendProxy_CropFlagsToPlayerFlagBitsLength"
+					"offset"		"12" // done
+				}
+			}
+			
+			"m_vecBaseVelocity"
+			{
+				"windows"
+				{
+					"signature"		"ServerClassInit<DT_LocalPlayerExclusive>"
+					"read"			"724" // done
+				}
+				
+				"linux"
+				{
+					"signature"		"ServerClassInit<DT_LocalPlayerExclusive>"
+					"read"			"713" // done
+				}
+			}
+		
+			"m_fFlags"
+			{
+				"windows"
+				{
+					"signature"		"ServerClassInit<DT_BasePlayer>"
+					"read"			"360" // done
+				}
+				
+				"linux"
+				{
+					"signature"		"ServerClassInit<DT_BasePlayer>"
+					"read"			"432" // done
+				}
+			}
+			
+			"g_SendTableCRC"
+			{
+				"linux"
+				{
+					"signature"		"SendTable_Init"
+					"read"			"380" // done
+				}
+				"windows"
+				{
+					"signature"		"SendTable_Init"
+					"read"			"289" // done
+				}
+			}
+		}
+	}
 }
