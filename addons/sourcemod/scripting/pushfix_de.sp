@@ -12,7 +12,7 @@ public Plugin myinfo =
     name        = "PushFix - Definitive Edition",
     author      = "Original idea xutaxkamay | Implementation GAMMACASE",
     description = "Fixes trigger_push prediction issues in an engine friendly way aswell as removes m_vecBaseVelocity clamping",
-    version     = "1.0.0",
+    version     = "1.1.0",
     url         = "https://steamcommunity.com/id/_GAMMACASE_/"
 };
 
